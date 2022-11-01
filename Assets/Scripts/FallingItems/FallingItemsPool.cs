@@ -7,6 +7,7 @@ namespace FallingItems
     public class FallingItemsPool<T> where T : MonoBehaviour
     {
         private T _prefab;
+        private T[] _prefabs;
         private Transform _spawnArea;
         public bool autoExpand { get; set; }
 
@@ -28,6 +29,14 @@ namespace FallingItems
             CreatePool(count);
         }
 
+        public FallingItemsPool(T[] prefabs, int count, Transform spawnArea)
+        {
+            _prefabs = prefabs;
+            _spawnArea = spawnArea;
+
+            CreatePoolFromArray(count);
+        }
+
         private void CreatePool(int count)
         {
             pool = new List<T>();
@@ -42,6 +51,24 @@ namespace FallingItems
         {
             var createdObject = Object.Instantiate(_prefab, _spawnArea);
             createdObject.gameObject.SetActive(isActiveByDefult);
+            pool.Add(createdObject);
+            return createdObject;
+        }
+
+        private void CreatePoolFromArray(int count)
+        {
+            pool = new List<T>();
+
+            for (int i = 0; i < count; i++)
+            {
+                CreateObejctsFromArray();
+            }
+        }
+
+        private T CreateObejctsFromArray(bool isActiveByDefault = false)
+        {
+            var createdObject = Object.Instantiate(_prefabs[Random.Range(0, _prefabs.Length)], _spawnArea);
+            createdObject.gameObject.SetActive(isActiveByDefault);
             pool.Add(createdObject);
             return createdObject;
         }

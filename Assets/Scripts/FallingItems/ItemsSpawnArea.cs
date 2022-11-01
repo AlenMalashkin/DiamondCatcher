@@ -6,7 +6,7 @@ namespace FallingItems
     {
         [SerializeField] private int poolCount = 3;
         [SerializeField] private bool autoExpand = false;
-        [SerializeField] private Item prefab;
+        [SerializeField] private Item[] prefabs;
         [SerializeField] private float secondsRemain;
 
         private Timer.Timer _timer;
@@ -20,7 +20,7 @@ namespace FallingItems
             _timer.OnTimerValueChanedEvent += OnTimerValueChaned;
             _timer.OnTimerFinishedEvent += OnTimerFinished;
 
-            pool = new FallingItemsPool<Item>(prefab, poolCount, transform);
+            pool = new FallingItemsPool<Item>(prefabs, poolCount, transform);
             pool.autoExpand = autoExpand;
         }
 

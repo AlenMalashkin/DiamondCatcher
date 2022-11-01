@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FallingItems
 {
-    public class Item : MonoBehaviour
+    public abstract class Item : MonoBehaviour
     {
         [SerializeField] private float speed;
         [SerializeField] private int damage;

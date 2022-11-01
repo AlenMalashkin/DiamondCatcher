@@ -684,7 +684,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolCount: 5
   autoExpand: 1
-  prefab: {fileID: 2196711382196625257, guid: df2f7d26b3b31764b9bd75cf127de6e0, type: 3}
+  prefabs:
+  - {fileID: 6437317404305043767, guid: df2f7d26b3b31764b9bd75cf127de6e0, type: 3}
+  - {fileID: 9204404918011799540, guid: 77fb7f6e2f61866419c8bc2342303479, type: 3}
+  - {fileID: 8609312248375049388, guid: 8e18cc834c7381944bff3a667457b559, type: 3}
   secondsRemain: 3
 --- !u!1 &1327284203
 GameObject:
