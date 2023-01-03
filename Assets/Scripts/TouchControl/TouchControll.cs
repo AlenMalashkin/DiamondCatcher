@@ -15,6 +15,11 @@ public class TouchControll : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     [SerializeField] private float _speed;
     [SerializeField] private TouchFields currentTouchField;
 
+    public void Init(Player player)
+    {
+        _player = player;
+    }
+
     public void OnPointerDown(PointerEventData pointerEventData)
     {
         if (currentTouchField == TouchFields.LeftTouchField)

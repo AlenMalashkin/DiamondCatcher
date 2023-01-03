@@ -7,14 +7,18 @@ public class Ground : MonoBehaviour
 {
     public event Action<FallingItems.Item> OnItemTouchGroundEvent;
 
+    [SerializeField] private Lifebar.PlayerLifebar playerLifebar;
+
     private void OnEnable()
         {
-            OnItemTouchGroundEvent += OnItemTouchGround;
+            OnItemTouchGroundEvent += DeactivateItem;
+            OnItemTouchGroundEvent += GiveDamage;
         }
 
         private void OnDisable()
         {
-            OnItemTouchGroundEvent -= OnItemTouchGround;
+            OnItemTouchGroundEvent -= DeactivateItem;
+            OnItemTouchGroundEvent -= GiveDamage;
         }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -25,8 +29,13 @@ public class Ground : MonoBehaviour
         }
     }
 
-    private void OnItemTouchGround(FallingItems.Item item)
+    private void DeactivateItem(FallingItems.Item item)
     {
         item.gameObject.SetActive(false);
+    }
+
+    private void GiveDamage(FallingItems.Item item)
+    {
+        playerLifebar.DecreaceHealth(item);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Currency;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
 
     private Dictionary<Type, IPlayerBehaviour> playerBehaviours;
     private IPlayerBehaviour currnetPlayerBehaviour;
+
+    private Bank _bank;
 
     private void OnEnable()
     {
@@ -45,9 +48,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Init(Bank bank)
+    {
+        _bank = bank;
+    }
+
     private void CollectItem(FallingItems.Item item)
     {
         item.gameObject.SetActive(false);
+        _bank.AddResource(item.GetItemPlayerPrefsName);
     }
 
     private void InitBehavoiurs()

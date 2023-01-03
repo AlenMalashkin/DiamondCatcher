@@ -7,32 +7,31 @@ namespace FallingItems
 {
     public class Item : MonoBehaviour
     {
-        [SerializeField] private float speed;
-        [SerializeField] private int damage;
-        public int GetCurrentItemDamage => damage;
-        private bool isMoving;
+        [SerializeField] private int _damage;
+        [SerializeField] private SpriteRenderer _renderer;
+        private float _speed;
+        private Sprite _sprite;
+        private string _playerPrefsName;
 
-        private void OnEnable()
-        {
-            isMoving = true;
-        }
+        public int GetCurrentItemDamage => _damage;
+        public string GetItemPlayerPrefsName => _playerPrefsName;
 
-        private void OnDisable()
+        public void Init(float speed, Sprite sprite, int damage, string playerPrefsName)
         {
-            isMoving = false;
+            _speed = speed;
+            _renderer.sprite = sprite;
+            _playerPrefsName = playerPrefsName;
+            _damage = damage;
         }
 
         private void Update()
         {
-            if (isMoving)
-            {
-                Move();
-            }
+            Move();
         }
 
         private void Move()
         {
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
+            transform.Translate(Vector2.down * _speed * Time.deltaTime);
         }
     }
 }

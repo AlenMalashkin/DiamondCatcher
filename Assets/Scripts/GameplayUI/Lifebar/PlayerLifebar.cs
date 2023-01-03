@@ -11,7 +11,6 @@ namespace Lifebar
         public Action<int> OnIncreasePlayerHealthEvent;
         public Action<int> OnDecreasePlayerHealthEvent;
 
-        [SerializeField] private Ground ground;
         [SerializeField] private int health;
         public int _health => health;
 
@@ -19,16 +18,6 @@ namespace Lifebar
         {
             if (Input.GetKeyDown(KeyCode.S))
                 IncreaseHealth();
-        }
-
-        private void OnEnable()
-        {
-            ground.OnItemTouchGroundEvent += DecreaceHealth;
-        }
-
-        private void OnDisable()
-        {
-            ground.OnItemTouchGroundEvent -= DecreaceHealth;
         }
 
         private void IncreaseHealth()
