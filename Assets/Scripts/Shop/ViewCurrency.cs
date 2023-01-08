@@ -12,8 +12,6 @@ namespace Shop
 
         private void Awake()
         {
-            _currencies = Resources.LoadAll<Currency.Currency>("Currency").ToList();
-
             CreateCurrencyUI();
         }
 

@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FallingItems;
 
 namespace Factories
 {
-    public abstract class GenericFactory<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class GenericFactory<T> : MonoBehaviour where T : Item
     {
         [SerializeField] private T _prefab;
-        [SerializeField] private List<Transform> _spawnPoints;
+        [SerializeField] private Transform _spawnPoint;
 
         public virtual T Spawn()
         {
-            var index = Random.Range(0, _spawnPoints.Count);
-
-            Vector3 pos = new Vector3(_spawnPoints[index].position.x + Random.Range(0, 5),
-                                        _spawnPoints[index].position.y + Random.Range(0, 5),
-                                        _spawnPoints[index].position.z + Random.Range(0, 5));
+            Vector3 pos = new Vector3(_spawnPoint.position.x + Random.Range(0f, 5f),
+                                        _spawnPoint.position.y + Random.Range(0f, 5f),
+                                        _spawnPoint.position.z + Random.Range(0f, 5f));
 
             return Instantiate(_prefab, pos, Quaternion.identity);
         }

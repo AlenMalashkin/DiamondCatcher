@@ -1,11 +1,9 @@
-using System.Collections;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
-    public event Action<FallingItems.Item> OnItemTouchGroundEvent;
+    public event Action<FallingItems.DefaultItem> OnItemTouchGroundEvent;
 
     [SerializeField] private Lifebar.PlayerLifebar playerLifebar;
 
@@ -23,7 +21,7 @@ public class Ground : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.TryGetComponent(out FallingItems.Item item))
+        if (col.collider.TryGetComponent(out FallingItems.DefaultItem item))
         {
             OnItemTouchGroundEvent.Invoke(item);
         }
@@ -34,7 +32,7 @@ public class Ground : MonoBehaviour
         item.gameObject.SetActive(false);
     }
 
-    private void GiveDamage(FallingItems.Item item)
+    private void GiveDamage(FallingItems.DefaultItem item)
     {
         playerLifebar.DecreaceHealth(item);
     }

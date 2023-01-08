@@ -6,9 +6,11 @@ using Currency;
 
 public class Player : MonoBehaviour
 {
-    public event Action<FallingItems.Item> OnCollectItemEvent;
+    public event Action<FallingItems.DefaultItem> OnCollectItemEvent;
+    public event Action<FallingItems.BoostItem> OnCollectBoostItemEvent;
 
-    [SerializeField] private float _speed;
+    private PlayerBoosts _playerBoosts;
+    private float _speed;
 
     private Dictionary<Type, IPlayerBehaviour> playerBehaviours;
     private IPlayerBehaviour currnetPlayerBehaviour;
@@ -17,7 +19,10 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
+        _playerBoosts = GetComponent<PlayerBoosts>();
+
         OnCollectItemEvent += CollectItem;
+        OnCollectBoostItemEvent += OnCollectBoostItem;
 
         InitBehavoiurs();
         SetBehaviourByDefault();
@@ -26,6 +31,7 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         OnCollectItemEvent -= CollectItem;
+        OnCollectBoostItemEvent -= OnCollectBoostItem;
     }
 
     private void Update()
@@ -42,21 +48,34 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.TryGetComponent(out FallingItems.Item item))
+        if (col.collider.TryGetComponent(out FallingItems.DefaultItem item))
         {
-            OnCollectItemEvent.Invoke(item);
+            OnCollectItemEvent?.Invoke(item);
+        }
+
+        if (col.collider.TryGetComponent(out FallingItems.BoostItem boostItem))
+        {
+            OnCollectBoostItemEvent?.Invoke(boostItem);
         }
     }
 
     public void Init(Bank bank)
     {
         _bank = bank;
+        _speed = PlayerPrefs.GetInt("playerSpeed", 10);
     }
 
-    private void CollectItem(FallingItems.Item item)
+    private void CollectItem(FallingItems.DefaultItem item)
     {
         item.gameObject.SetActive(false);
-        _bank.AddResource(item.GetItemPlayerPrefsName);
+        _bank.AddResource(item.GetItemPlayerPrefsName, 1);
+    }
+
+    private void OnCollectBoostItem(FallingItems.BoostItem boostItem)
+    {
+        boostItem.gameObject.SetActive(false);
+        var boost = _playerBoosts.SetBoost(boostItem.boostName);
+        boost.Invoke();
     }
 
     private void InitBehavoiurs()

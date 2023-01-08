@@ -8,7 +8,7 @@ namespace Location
 {
     public class InitLocation : MonoBehaviour
     {
-        [SerializeField] private DefaultItemFactory _itemFactory;
+        [SerializeField] private DefaultItemFactory[] _itemFactories;
 
         [SerializeField] private SpriteRenderer _ground;
         [SerializeField] private SpriteRenderer _background;
@@ -26,7 +26,10 @@ namespace Location
 
             var currentLocationParams = _locationParams[PlayerPrefs.GetString("CurrentLocation")];
 
-            _itemFactory.InitSpritesList(currentLocationParams.currencies);
+            for (int i = 0; i < _itemFactories.Length; i++)
+            {
+                _itemFactories[i].InitCurrenciesList(currentLocationParams.currencies);
+            }
             
             _ground.sprite = currentLocationParams.ground;
             _background.sprite = currentLocationParams.background;

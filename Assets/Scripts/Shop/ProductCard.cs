@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Currency;
 using UnityEngine.EventSystems;
@@ -13,6 +14,7 @@ namespace Shop
         [SerializeField] private Image _itemImage;
         [SerializeField] private Text _itemName;
         [SerializeField] private Text _priceText;
+        [SerializeField] private Text _lockText;
 
         private Bank _bank;
 
@@ -24,7 +26,14 @@ namespace Shop
         private void Start()
         {
             if (!BoughtCheck())
+            {
                 _button.onClick.AddListener(Buy);
+            } 
+            else
+            {
+                UpdateButton();
+                _button.onClick.AddListener(StartGame);
+            }
         }
 
         public void InitProductCard(Sprite itemImage, Currency.Currency currency, Bank bank, ViewCurrency viewCurrency, string itemName, int price, string playerPrefsSaveName)
@@ -44,24 +53,40 @@ namespace Shop
         {
             if (PlayerPrefs.HasKey(_playerPrefsSaveName))
             {
-                _button.interactable = false;
-                _button.image.color = new Color32(0, 0, 0, 150);
+                _button.image.color = new Color32(47, 185, 214, 255);
+                _itemImage.color = new Color32(255, 255, 255, 255);
                 return true;
             }
-
+            
+            _itemImage.color = new Color32(255, 255, 255, 150);
+            _button.image.color = new Color32(47, 185, 214, 150);
             return false;
         }
 
-        public void Buy()
+        private void Buy()
         {
             if (PlayerPrefs.GetInt(_currency.playerPrefsName) > _price)
             {
                 _bank.SpendResource(_currency.playerPrefsName, _price);
                 PlayerPrefs.SetString(_playerPrefsSaveName, "Bought");
-                PlayerPrefs.SetString("CurrentLocation", _playerPrefsSaveName);
                 BoughtCheck();
                 _viewCurrency.UpdateUI();
+                _button.onClick.RemoveListener(Buy);
+                _button.onClick.AddListener(StartGame);
+                UpdateButton();
             }    
+        }
+
+        private void StartGame()
+        {
+            PlayerPrefs.SetString("CurrentLocation", _playerPrefsSaveName);
+            SceneManager.LoadScene(1);
+        }
+
+        private void UpdateButton()
+        {
+            _lockText.gameObject.SetActive(false);
+            _priceText.gameObject.SetActive(false);
         }
     }    
 }

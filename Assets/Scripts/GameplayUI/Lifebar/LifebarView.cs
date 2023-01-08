@@ -17,11 +17,11 @@ namespace Lifebar
             lifebar.OnIncreasePlayerHealthEvent += IncreaseHealth;
             lifebar.OnDecreasePlayerHealthEvent += DecreaceHealth;
 
-            for (int i = 0; i < lifebar._health; i++)
-            {
-                var healthSprite = Instantiate(healthPrefab, transform);
-                healthPoints.Add(healthSprite);
-            }
+            // for (int i = 0; i < lifebar.maxHealth; i++)
+            // {
+            //     var healthSprite = Instantiate(healthPrefab, transform);
+            //     healthPoints.Add(healthSprite);
+            // }
         }
 
         private void OnDisable()
@@ -46,6 +46,7 @@ namespace Lifebar
         {
             healthPoints[health].sprite = emptyHealthSprite;
         }
+
     }
 }
 
