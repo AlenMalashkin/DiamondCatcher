@@ -7,8 +7,10 @@ namespace Factories
     public class DefaultItemFactory : GenericFactory<DefaultItem>
     {
         [SerializeField] private List<Currency.Currency> _currencies;
-        [SerializeField] private float maxSpeed;
-        [SerializeField] private float minSpeed;
+        [SerializeField] private float _currMaxSpeed;
+        [SerializeField] private float _maxSpeed;
+        [SerializeField] private float _minSpeed;
+        [SerializeField] private float _currMinSpeed;
 
         public override DefaultItem Spawn()
         {
@@ -16,23 +18,25 @@ namespace Factories
             
             var curr = _currencies[Random.Range(0, _currencies.Count)];
 
-            item.Init(Random.Range(minSpeed, maxSpeed), curr.sprite, curr.damage, curr.playerPrefsName);
+            item.Init(Random.Range(_currMinSpeed, _currMaxSpeed), curr.sprite, curr.damage, curr.playerPrefsName);
 
             return item;
         }
 
-        public void InitCurrenciesList(List<Currency.Currency> currencies)
+        public void Init(List<Currency.Currency> currencies, float minSpeed, float maxSpeed)
         {
             _currencies = currencies;
+            _currMaxSpeed = maxSpeed;
+            _currMinSpeed = minSpeed;
         }
 
         public void IncreaseItemSpeed()
         {
-            if (minSpeed < 2f)
-                minSpeed += 0.01f;
+            if (_minSpeed > _currMinSpeed)
+                _currMinSpeed += 0.01f;
 
-            if (maxSpeed < 3f)
-                maxSpeed += 0.01f;
+            if (_maxSpeed > _currMaxSpeed)
+                _currMaxSpeed += 0.01f;
         }
     }
 }

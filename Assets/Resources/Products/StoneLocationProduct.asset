@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbea36f4bd1facb4e8c6d5299bd23de0, type: 3}
   m_Name: StoneLocationProduct
   m_EditorClassIdentifier: 
-  _image: {fileID: 21300000, guid: 8a76c733d381e1944b6445ad661639b9, type: 3}
+  _image: {fileID: 21300000, guid: 383e7c70d969b3647b3b0261d9e8bc17, type: 3}
   _currency: {fileID: 11400000, guid: bf28fd9814616204eacb3332206af33d, type: 2}
   _productName: Stone Location
   _cost: 20

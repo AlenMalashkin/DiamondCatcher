@@ -19,7 +19,7 @@ namespace PlayerUpgradeMenu
             _statPowerLevels = statPowerLevels;
 
             _statImage.sprite = statData.sprite;
-            _statPowerText.text = statPowerLevels[PlayerPrefs.GetInt(statData.getUpgradeLevelByPlayerPrefsName)].ToString();
+            _statPowerText.text = statPowerLevels[PlayerPrefs.GetInt(statData.getUpgradeLevelByPlayerPrefsName)] + " " + statData.statUnit;
         }
     }
 }

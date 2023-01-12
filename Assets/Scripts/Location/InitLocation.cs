@@ -12,6 +12,7 @@ namespace Location
 
         [SerializeField] private SpriteRenderer _ground;
         [SerializeField] private SpriteRenderer _background;
+        [SerializeField] private GameObject _boss;
 
         private Dictionary<string, LocationParams> _locationParams;
 
@@ -22,17 +23,26 @@ namespace Location
             #region Add locations to dictionary
             _locationParams.Add("WoodLocation", Resources.Load<LocationParams>("Locations/WoodLocation"));
             _locationParams.Add("StoneLocation", Resources.Load<LocationParams>("Locations/StoneLocation"));
+            _locationParams.Add("NetherLocation", Resources.Load<LocationParams>("Locations/NetherLocation"));
+            _locationParams.Add("StrongholdLocation", Resources.Load<LocationParams>("Locations/StrongholdLocation"));
+            _locationParams.Add("EndLocation", Resources.Load<LocationParams>("Locations/EndLocation"));
+            _locationParams.Add("EndDragonLocation", Resources.Load<LocationParams>("Locations/EndDragonLocation"));
             #endregion
 
             var currentLocationParams = _locationParams[PlayerPrefs.GetString("CurrentLocation")];
 
             for (int i = 0; i < _itemFactories.Length; i++)
             {
-                _itemFactories[i].InitCurrenciesList(currentLocationParams.currencies);
+                _itemFactories[i].Init(currentLocationParams.currencies, 0.5f, 1f);
             }
             
             _ground.sprite = currentLocationParams.ground;
             _background.sprite = currentLocationParams.background;
+
+            if (currentLocationParams.isBossLocation)
+            {
+                _boss.SetActive(true);
+            }
         }
     }
 

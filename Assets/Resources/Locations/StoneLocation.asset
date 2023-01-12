@@ -15,5 +15,11 @@ MonoBehaviour:
   _currencies:
   - {fileID: 11400000, guid: 70c40f23b01ed914a9b5c647fdd19c3a, type: 2}
   - {fileID: 11400000, guid: 1da86ece16fbb694e881a7b73ece6460, type: 2}
-  _background: {fileID: 21300000, guid: 8a76c733d381e1944b6445ad661639b9, type: 3}
-  _ground: {fileID: 21300000, guid: 804f104aeb7e57549935b6873fab08bc, type: 3}
+  - {fileID: 11400000, guid: 09eb691dd50a3674b880925f1ccbc462, type: 2}
+  - {fileID: 11400000, guid: 1516c3d604965fa4a8fcf0cfffa8e454, type: 2}
+  - {fileID: 11400000, guid: 188dee922f01da244955a2f795aa37a8, type: 2}
+  _background: {fileID: 21300000, guid: 383e7c70d969b3647b3b0261d9e8bc17, type: 3}
+  _ground: {fileID: 21300000, guid: d6479185f94d43c4f84ac02399ccd043, type: 3}
+  _recordSavePath: StoneLocationRecord
+  _locationName: Stone Location
+  _isBossLocation: 0

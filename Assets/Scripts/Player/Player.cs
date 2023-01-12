@@ -1,8 +1,10 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using Boss;
 using UnityEngine;
 using Currency;
+using FallingItems;
 
 public class Player : MonoBehaviour
 {
@@ -22,8 +24,9 @@ public class Player : MonoBehaviour
         _playerBoosts = GetComponent<PlayerBoosts>();
 
         OnCollectItemEvent += CollectItem;
+        OnCollectItemEvent += CountTotalItemAmount;
         OnCollectBoostItemEvent += OnCollectBoostItem;
-
+        
         InitBehavoiurs();
         SetBehaviourByDefault();
     }
@@ -31,6 +34,7 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         OnCollectItemEvent -= CollectItem;
+        OnCollectItemEvent -= CountTotalItemAmount;
         OnCollectBoostItemEvent -= OnCollectBoostItem;
     }
 
@@ -63,12 +67,20 @@ public class Player : MonoBehaviour
     {
         _bank = bank;
         _speed = PlayerPrefs.GetInt("playerSpeed", 10);
+        
     }
 
     private void CollectItem(FallingItems.DefaultItem item)
     {
         item.gameObject.SetActive(false);
         _bank.AddResource(item.GetItemPlayerPrefsName, 1);
+    }
+
+    private void CountTotalItemAmount(DefaultItem item)
+    {
+        var amount = PlayerPrefs.GetInt(item.GetItemPlayerPrefsName + "Total", 0);
+        amount += 1;
+        PlayerPrefs.SetInt(item.GetItemPlayerPrefsName + "Total", amount);
     }
 
     private void OnCollectBoostItem(FallingItems.BoostItem boostItem)

@@ -15,4 +15,5 @@ MonoBehaviour:
   _sprite: {fileID: -759449550199681044, guid: 782c330df18abd7478485ed0f4309cd4, type: 3}
   _getUpgradeLevelByPlayerPrefsName: HelthBoostLevel
   _inGamePlayerPrefsStatName: maxHealth
+  _statUnit: HP
   _statPowerLevels: 0400000005000000060000000700000008000000

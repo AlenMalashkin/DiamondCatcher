@@ -22,7 +22,7 @@ namespace Factories
             Create();
         }
 
-        public override void OnTimerValueChaned(float remainingSeconds)
+        public override void OnTimerValueChanged(float remainingSeconds)
         {
             if (timeToSpawnItem < 60f)
                 timeToSpawnItem += 0.01f;

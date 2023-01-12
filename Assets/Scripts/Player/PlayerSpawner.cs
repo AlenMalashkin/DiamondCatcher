@@ -1,3 +1,4 @@
+using Boss;
 using UnityEngine;
 using Currency;
 using Lifebar;
@@ -7,6 +8,7 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] private TouchControll[] _touchControlls;
     [SerializeField] private Bank _bank;
     [SerializeField] private PlayerLifebar _palyerLifebar;
+    [SerializeField] private BossHealthbar _bossHealthbar;
 
     [SerializeField] private Player _playerPrefab;
 
@@ -27,5 +29,7 @@ public class PlayerSpawner : MonoBehaviour
         {
             touchControll.Init(player);
         }
+
+        _bossHealthbar.Init(player);
     }
 }

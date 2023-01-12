@@ -56,16 +56,22 @@
      <Compile Include="Assets\Scripts\GameplayUI\Lifebar\LifebarView.cs" />
      <Compile Include="Assets\Scripts\FallingItems\BoostItem.cs" />
      <Compile Include="Assets\Resources\Locations\LocationParams.cs" />
+     <Compile Include="Assets\Scripts\Fader\Fader.cs" />
      <Compile Include="Assets\Scripts\Exchange\Exchange.cs" />
      <Compile Include="Assets\Scripts\Factories\GenericFactory.cs" />
      <Compile Include="Assets\Scripts\Timer\TimeInvoker.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAnimations.cs" />
      <Compile Include="Assets\Scripts\Player\IPlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\FallingItems\DefaultItem.cs" />
+     <Compile Include="Assets\Scripts\Fader\FaderInvoker.cs" />
      <Compile Include="Assets\Scripts\Factories\FactoryInvokerAbstract.cs" />
      <Compile Include="Assets\Scripts\Shop\CurrencyUI.cs" />
      <Compile Include="Assets\Scripts\Factories\BoostItemFactory\BoostItemFactoryInvoker.cs" />
      <Compile Include="Assets\Scripts\FallingItems\Item.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBoosts.cs" />
+     <Compile Include="Assets\Scripts\MenuButton.cs" />
+     <Compile Include="Assets\Scripts\Boss\BossHealthbar.cs" />
+     <Compile Include="Assets\Scripts\Exchange\InitExchangers.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerSpawner.cs" />
      <Compile Include="Assets\Scripts\Bank\Bank.cs" />
      <Compile Include="Assets\Resources\Boosters\BoostData.cs" />
@@ -77,9 +83,14 @@
      <Compile Include="Assets\Scripts\Player\PlayerMoveRightBehaviour.cs" />
      <Compile Include="Assets\Resources\Currency\Currency.cs" />
      <Compile Include="Assets\Scripts\PlayerStats\Stat.cs" />
+     <Compile Include="Assets\Resources\Exchanges\ExchangeData.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Timer\Timer.cs" />
      <Compile Include="Assets\Scripts\Shop\ViewCurrency.cs" />
+     <Compile Include="Assets\Scripts\PlayerProfile\ViewRecords.cs" />
+     <Compile Include="Assets\Scripts\PlayerProfile\RecordCard.cs" />
+     <Compile Include="Assets\Scripts\PlayerProfile\ViewTotalResourceTaken.cs" />
+     <Compile Include="Assets\Scripts\PlayerProfile\Resource.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.40f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

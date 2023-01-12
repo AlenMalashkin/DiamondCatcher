@@ -10,11 +10,13 @@ namespace PlayerUpgradeMenu
         [SerializeField] private Sprite _sprite;
         [SerializeField] private string _getUpgradeLevelByPlayerPrefsName;
         [SerializeField] private string _inGamePlayerPrefsStatName;
+        [SerializeField] private string _statUnit;
         [SerializeField] private int[] _statPowerLevels;
 
         public Sprite sprite => _sprite;
         public string getUpgradeLevelByPlayerPrefsName => _getUpgradeLevelByPlayerPrefsName;
         public string inGamePlayerPrefsStatName => _inGamePlayerPrefsStatName;
+        public string statUnit => _statUnit;
         public int[] statPowerLevels => _statPowerLevels;
     }    
 }

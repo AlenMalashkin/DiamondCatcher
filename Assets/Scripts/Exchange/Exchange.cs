@@ -9,18 +9,43 @@ namespace Exchange
 {
     public class Exchange : MonoBehaviour
     {
+        [SerializeField] private Image _changeResourseImage;
+        [SerializeField] private Image _resultResourceImage;
+        [SerializeField] private Text _costText;
+        [SerializeField] private Text _resultText;
         [SerializeField] private Button _button;
-        [SerializeField] private Bank _bank;
-        [SerializeField] private Currency.Currency _changeResourse;
-        [SerializeField] private Currency.Currency _resultResource;
-        [SerializeField] private ViewCurrency _viewCurrency;
 
-        [SerializeField] private int _cost;
-        [SerializeField] private int _result;
+        private Currency.Currency _changeResourse;
+        private Currency.Currency _resultResource;
+        private ViewCurrency _viewCurrency;
+        private Bank _bank;
 
-        private void Awake()
+        private int _cost;
+        private int _result;
+
+        public void Init(Currency.Currency changeResource, 
+                        Currency.Currency resultResource, 
+                        ViewCurrency viewCurrency, 
+                        Bank bank,
+                        int cost, 
+                        int result)
+        {
+            _changeResourse = changeResource;
+            _resultResource = resultResource;
+            _viewCurrency = viewCurrency;
+            _bank = bank;
+
+            _cost = cost;
+            _result = result;
+        }
+        
+        private void Start()
         {
             _button.onClick.AddListener(ExcahngeResources);
+            _changeResourseImage.sprite = _changeResourse.sprite;
+            _resultResourceImage.sprite = _resultResource.sprite;
+            _costText.text = _cost.ToString();
+            _resultText.text = _result.ToString();
         }
 
         private void ExcahngeResources()

@@ -15,4 +15,5 @@ MonoBehaviour:
   _sprite: {fileID: -9083362998159298969, guid: 1e2611f5e41f04e41a8ae8a70d5f115e, type: 3}
   _getUpgradeLevelByPlayerPrefsName: SpeedLevel
   _inGamePlayerPrefsStatName: playerSpeed
+  _statUnit: km/h
   _statPowerLevels: 0c0000000e000000100000001200000014000000

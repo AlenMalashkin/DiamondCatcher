@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01f9647a56a4e540963e233663a55b5, type: 3}
+  m_Name: NetherLocation
+  m_EditorClassIdentifier: 
+  _currencies:
+  - {fileID: 11400000, guid: 6829286802e74ad4f8ee780fdda36e22, type: 2}
+  - {fileID: 11400000, guid: 5db775939348775448351449196abbca, type: 2}
+  _background: {fileID: 21300000, guid: 880521ce4eaad5f41888efc5aa4a6dfe, type: 3}
+  _ground: {fileID: 21300000, guid: 8d705131ff66e3248802189df8b4587a, type: 3}
+  _recordSavePath: NetherLocationRecord
+  _locationName: Nether Location
+  _isBossLocation: 0

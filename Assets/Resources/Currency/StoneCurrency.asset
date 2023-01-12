@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312362dd390a65c4f90e461b29c87503, type: 3}
   m_Name: StoneCurrency
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -5177388603050735206, guid: a6f724374a7744e42a58996be1634add, type: 3}
+  _sprite: {fileID: 21300000, guid: e803e018d5ca0f14384c6012373a97bc, type: 3}
   _damage: 1
   _playerPrefsName: StoneCurrency

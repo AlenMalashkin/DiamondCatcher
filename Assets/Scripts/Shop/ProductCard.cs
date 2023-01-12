@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Currency;
+using Fader;
 using UnityEngine.EventSystems;
+
 
 namespace Shop
 {
@@ -12,6 +14,7 @@ namespace Shop
     {
         [SerializeField] private Button _button;
         [SerializeField] private Image _itemImage;
+        [SerializeField] private Image _currencyImage;
         [SerializeField] private Text _itemName;
         [SerializeField] private Text _priceText;
         [SerializeField] private Text _lockText;
@@ -41,6 +44,7 @@ namespace Shop
             _itemImage.sprite = itemImage;
             _itemName.text = itemName;
             _priceText.text = price.ToString();
+            _currencyImage.sprite = currency.sprite;
 
             _viewCurrency = viewCurrency;
             _bank = bank;
@@ -55,6 +59,7 @@ namespace Shop
             {
                 _button.image.color = new Color32(47, 185, 214, 255);
                 _itemImage.color = new Color32(255, 255, 255, 255);
+                _currencyImage.gameObject.SetActive(false);
                 return true;
             }
             
@@ -65,7 +70,7 @@ namespace Shop
 
         private void Buy()
         {
-            if (PlayerPrefs.GetInt(_currency.playerPrefsName) > _price)
+            if (PlayerPrefs.GetInt(_currency.playerPrefsName) >= _price)
             {
                 _bank.SpendResource(_currency.playerPrefsName, _price);
                 PlayerPrefs.SetString(_playerPrefsSaveName, "Bought");
@@ -80,13 +85,14 @@ namespace Shop
         private void StartGame()
         {
             PlayerPrefs.SetString("CurrentLocation", _playerPrefsSaveName);
-            SceneManager.LoadScene(1);
+            FaderInvoker.instance.LoadScene("MainScene");
         }
 
         private void UpdateButton()
         {
             _lockText.gameObject.SetActive(false);
             _priceText.gameObject.SetActive(false);
+            _currencyImage.gameObject.SetActive(false);
         }
     }    
 }

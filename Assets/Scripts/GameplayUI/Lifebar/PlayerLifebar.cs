@@ -1,6 +1,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using Fader;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -69,7 +70,7 @@ namespace Lifebar
 
             if (_health <= 0)
             {
-                SceneManager.LoadScene(0);
+                FaderInvoker.instance.LoadScene("Menu");
             }
         }
 
@@ -87,7 +88,10 @@ namespace Lifebar
 
         private void OnDecreaceHealth(int health)
         {
-            healthPoints[health].sprite = emptyHealthSprite;
+            for (int i = _maxHealth - 1; i >= health; i--)
+            {
+                healthPoints[i].sprite = emptyHealthSprite;
+            }
         }
 
         private void OnTimerFinished()
@@ -98,12 +102,6 @@ namespace Lifebar
             {
                 IncreaseHealth();
             }
-        }
-
-        private IEnumerator RegenerationRoutine(float seconds)
-        {
-            yield return new WaitForSeconds(seconds);
-            IncreaseHealth();
         }
     } 
 }

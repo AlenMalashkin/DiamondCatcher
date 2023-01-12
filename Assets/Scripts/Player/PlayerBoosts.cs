@@ -5,6 +5,7 @@ using Lifebar;
 
 public class PlayerBoosts : MonoBehaviour
 {
+    [SerializeField] private PlayerAnimations _playerAnimations;
     [SerializeField] private float _boostDuration;
 
     private PlayerLifebar _playerLifebar;
@@ -44,16 +45,16 @@ public class PlayerBoosts : MonoBehaviour
 
     private void SizeBoost()
     {
-        transform.localScale = new Vector3(2, 2, 1);
+        _playerAnimations.SetSizedAnimation();
+    }
+
+    private void DeactivateSizeBoost()
+    {
+        _playerAnimations.SetShrinkAnimation();
     }
 
     private void HealthBoost()
     {
         _playerLifebar.IncreaseHealth();
-    }
-
-    private void DeactivateSizeBoost()
-    {
-        transform.localScale = new Vector3(1, 1, 1);
     }
 }

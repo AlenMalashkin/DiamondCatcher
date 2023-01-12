@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpeedUpgradeBar
   m_EditorClassIdentifier: 
   _statData: {fileID: 11400000, guid: 6732c8bf8c48acd42b45cba0abb52424, type: 2}
-  _upgradeCosts: 65000000c90000002d01000091010000f5010000
-  _currency: {fileID: 11400000, guid: 1da86ece16fbb694e881a7b73ece6460, type: 2}
+  _upgradeCosts: e8030000d0070000b80b0000a00f000088130000
+  _currency: {fileID: 11400000, guid: 1516c3d604965fa4a8fcf0cfffa8e454, type: 2}

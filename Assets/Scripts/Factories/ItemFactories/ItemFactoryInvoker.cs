@@ -1,37 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using FallingItems;
 
 namespace Factories
 {
     public class ItemFactoryInvoker : FactoryInvokerAbstract
     {
-        [SerializeField] private DefaultItemFactory[] _defaultFactories;
+        [SerializeField] private DefaultItemFactory _defaultFactory;
+        [SerializeField] private float _currentMinTimeToSpawn;
+        [SerializeField] private float _minTimeToSpawn;
+        [SerializeField] private float _currentMaxTimeToSpawn;
+        [SerializeField] private float _maxTimeToSpawn;
 
         public override void Create()
         {
-            for (int i = 0; i < _defaultFactories.Length; i++)
-            {
-                _defaultFactories[i].Spawn();
-            }
+            _defaultFactory.Spawn();
         }
 
-        public override void OnTimerValueChaned(float remainingSeconds)
+        public override void OnTimerValueChanged(float remainingSeconds)
         {
-            for (int i = 0; i < _defaultFactories.Length; i++)
-            {
-                _defaultFactories[i].IncreaseItemSpeed();
-            }
+                _defaultFactory.IncreaseItemSpeed();
 
-            if (timeToSpawnItem > 2f)
-            {
-                timeToSpawnItem -= 0.01f;
-            }
+            if (_currentMinTimeToSpawn > _minTimeToSpawn)
+                _currentMinTimeToSpawn -= 0.01f;
+
+            if (_currentMaxTimeToSpawn > _maxTimeToSpawn)
+                _currentMaxTimeToSpawn -= 0.01f;
         }
 
         public override void OnTimerFinished()
         {
+            timeToSpawnItem = Random.Range(_currentMinTimeToSpawn, _currentMaxTimeToSpawn);
             StartTimer(timeToSpawnItem);
             Create();
         }

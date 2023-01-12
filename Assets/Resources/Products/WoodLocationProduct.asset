@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbea36f4bd1facb4e8c6d5299bd23de0, type: 3}
   m_Name: WoodLocationProduct
   m_EditorClassIdentifier: 
-  _image: {fileID: 21300000, guid: cfdbba90317e4914f98bec8e781922a3, type: 3}
+  _image: {fileID: 21300000, guid: 89addc7bedb56ca468ffc0a6c550723b, type: 3}
   _currency: {fileID: 11400000, guid: 1da86ece16fbb694e881a7b73ece6460, type: 2}
   _productName: Wood Location
   _cost: 10

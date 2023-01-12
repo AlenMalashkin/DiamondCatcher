@@ -15,4 +15,5 @@ MonoBehaviour:
   _sprite: {fileID: 3958262417687261516, guid: 157d21adedb570c40b238ba79c72a1da, type: 3}
   _getUpgradeLevelByPlayerPrefsName: RegenLevel
   _inGamePlayerPrefsStatName: regenTime
+  _statUnit: HP/sec
   _statPowerLevels: 0900000008000000070000000600000005000000

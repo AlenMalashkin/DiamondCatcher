@@ -13,19 +13,19 @@ namespace Factories
         {
             _timer = new Timer.Timer(timeToSpawnItem);
             StartTimer(timeToSpawnItem);
-            _timer.OnTimerValueChanedEvent += OnTimerValueChaned;
+            _timer.OnTimerValueChanedEvent += OnTimerValueChanged;
             _timer.OnTimerFinishedEvent += OnTimerFinished;
         }
 
         private void OnDestroy()
         {
-            _timer.OnTimerValueChanedEvent -= OnTimerValueChaned;
+            _timer.OnTimerValueChanedEvent -= OnTimerValueChanged;
             _timer.OnTimerFinishedEvent -= OnTimerFinished;
         }
 
         public abstract void Create();
 
-        public abstract void OnTimerValueChaned(float remainingSeconds);
+        public abstract void OnTimerValueChanged(float remainingSeconds);
 
         public abstract void OnTimerFinished();
 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312362dd390a65c4f90e461b29c87503, type: 3}
   m_Name: WoodCurrency
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 7482667652216324306, guid: a2ef46a6bcb0acb4c88a1d24a89a926e, type: 3}
+  _sprite: {fileID: 21300000, guid: 3965c01205acd344f801ded3ff862fba, type: 3}
   _damage: 1
   _playerPrefsName: WoodCurrency

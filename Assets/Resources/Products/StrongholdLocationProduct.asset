@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbea36f4bd1facb4e8c6d5299bd23de0, type: 3}
+  m_Name: StrongholdLocationProduct
+  m_EditorClassIdentifier: 
+  _image: {fileID: 21300000, guid: 1b448fa9169bacc4cab95d1b173c4b64, type: 3}
+  _currency: {fileID: 11400000, guid: 5db775939348775448351449196abbca, type: 2}
+  _productName: Stronghold Location
+  _cost: 1000
+  _playerPrefsSaveName: StrongholdLocation

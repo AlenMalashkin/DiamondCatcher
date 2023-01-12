@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312362dd390a65c4f90e461b29c87503, type: 3}
   m_Name: GoldCurrency
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -2413806693520163455, guid: 0822f843f5474364e81ed84b89c2df11, type: 3}
+  _sprite: {fileID: 21300000, guid: a292de382904d5746a8def22c1be4a69, type: 3}
   _damage: 1
   _playerPrefsName: GoldCurrency

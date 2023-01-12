@@ -13,6 +13,9 @@
           <e p="Currency" t="Include">
             <e p="Currency.cs" t="Include" />
           </e>
+          <e p="Exchanges" t="Include">
+            <e p="ExchangeData.cs" t="Include" />
+          </e>
           <e p="Locations" t="Include">
             <e p="LocationParams.cs" t="Include" />
           </e>
@@ -32,8 +35,12 @@
           <e p="Bank" t="Include">
             <e p="Bank.cs" t="Include" />
           </e>
+          <e p="Boss" t="Include">
+            <e p="BossHealthbar.cs" t="Include" />
+          </e>
           <e p="Exchange" t="Include">
             <e p="Exchange.cs" t="Include" />
+            <e p="InitExchangers.cs" t="Include" />
           </e>
           <e p="Factories" t="Include">
             <e p="BoostItemFactory" t="Include">
@@ -46,6 +53,10 @@
               <e p="DefaultItemFactory.cs" t="Include" />
               <e p="ItemFactoryInvoker.cs" t="Include" />
             </e>
+          </e>
+          <e p="Fader" t="Include">
+            <e p="Fader.cs" t="Include" />
+            <e p="FaderInvoker.cs" t="Include" />
           </e>
           <e p="FallingItems" t="Include">
             <e p="BoostItem.cs" t="Include" />
@@ -62,14 +73,22 @@
           <e p="Location" t="Include">
             <e p="InitLocation.cs" t="Include" />
           </e>
+          <e p="MenuButton.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="IPlayerBehaviour.cs" t="Include" />
             <e p="Player.cs" t="Include" />
+            <e p="PlayerAnimations.cs" t="Include" />
             <e p="PlayerBoosts.cs" t="Include" />
             <e p="PlayerMoveLeftBehaviour.cs" t="Include" />
             <e p="PlayerMoveRightBehaviour.cs" t="Include" />
             <e p="PlayerSpawner.cs" t="Include" />
             <e p="PlayerStayBehaviour.cs" t="Include" />
+          </e>
+          <e p="PlayerProfile" t="Include">
+            <e p="RecordCard.cs" t="Include" />
+            <e p="Resource.cs" t="Include" />
+            <e p="ViewRecords.cs" t="Include" />
+            <e p="ViewTotalResourceTaken.cs" t="Include" />
           </e>
           <e p="PlayerStats" t="Include">
             <e p="Stat.cs" t="Include" />
