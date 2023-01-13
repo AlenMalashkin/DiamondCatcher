@@ -19,6 +19,7 @@ namespace Lifebar
         [SerializeField] private Image healthPrefab;
         [SerializeField] private Sprite emptyHealthSprite;
         [SerializeField] private StatData[] _stats;
+        [SerializeField] private Score _score;
 
         private Timer.Timer _timer;
         private int _maxHealth;
@@ -70,7 +71,8 @@ namespace Lifebar
 
             if (_health <= 0)
             {
-                FaderInvoker.instance.LoadScene("Menu");
+                FaderInvoker.instance.LoadScene("LoseScreen");
+                PlayerPrefs.SetFloat(PlayerPrefs.GetString("CurrentLocation") + "Record", _score.score);
             }
         }
 
