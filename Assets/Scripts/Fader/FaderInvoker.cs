@@ -13,6 +13,8 @@ namespace Fader
 
         private void Awake()
         {
+            PlayerPrefs.SetString("WoodLocation", "Bought");
+
             if (instance != null)
             {
                 Destroy(gameObject);
