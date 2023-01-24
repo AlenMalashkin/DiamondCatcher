@@ -33,7 +33,11 @@ namespace Location
 
             for (int i = 0; i < _itemFactories.Length; i++)
             {
-                _itemFactories[i].Init(currentLocationParams.currencies, 0.5f, 1f);
+                _itemFactories[i].Init(currentLocationParams.currencies,
+                                        currentLocationParams.startMinSpeed,
+                                        currentLocationParams.startMaxSpeed, 
+                                        currentLocationParams.minSpeed,
+                                        currentLocationParams.maxSpeed);
             }
             
             _ground.sprite = currentLocationParams.ground;

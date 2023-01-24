@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Currency;
-using Fader;
-using UnityEngine.EventSystems;
+using Scenes;
 
 
 namespace Shop
@@ -16,6 +12,7 @@ namespace Shop
         [SerializeField] private Image _itemImage;
         [SerializeField] private Image _currencyImage;
         [SerializeField] private Text _itemName;
+        [SerializeField] private Text _recordText;
         [SerializeField] private Text _priceText;
         [SerializeField] private Text _lockText;
 
@@ -39,10 +36,17 @@ namespace Shop
             }
         }
 
-        public void InitProductCard(Sprite itemImage, Currency.Currency currency, Bank bank, ViewCurrency viewCurrency, string itemName, int price, string playerPrefsSaveName)
+        public void InitProductCard(Sprite itemImage, 
+                                    Currency.Currency currency, 
+                                    Bank bank, 
+                                    ViewCurrency viewCurrency, 
+                                    string itemName, 
+                                    int price, 
+                                    string playerPrefsSaveName)
         {
             _itemImage.sprite = itemImage;
             _itemName.text = itemName;
+            _recordText.text = "Рекорд: " + Mathf.Round(PlayerPrefs.GetFloat(playerPrefsSaveName + "Record")).ToString();
             _priceText.text = price.ToString();
             _currencyImage.sprite = currency.sprite;
 
@@ -85,7 +89,7 @@ namespace Shop
         private void StartGame()
         {
             PlayerPrefs.SetString("CurrentLocation", _playerPrefsSaveName);
-            FaderInvoker.instance.LoadScene("MainScene");
+            SceneLoader.instance.LoadScene("MainScene");
         }
 
         private void UpdateButton()

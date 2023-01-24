@@ -18,5 +18,9 @@ MonoBehaviour:
   _background: {fileID: 21300000, guid: 347e91faa338d4344b82022fa47c8d41, type: 3}
   _ground: {fileID: 21300000, guid: d22328717e833a343898d13a35665108, type: 3}
   _recordSavePath: EndLocationRecord
-  _locationName: End Location
+  _locationName: "\u041A\u0440\u0430\u0439"
+  _startMinSpeed: 5
+  _startMaxSpeed: 6
+  _minSpeed: 9.5
+  _maxSpeed: 10
   _isBossLocation: 0

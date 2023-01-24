@@ -12,6 +12,10 @@ namespace Location
         [SerializeField] private Sprite _ground;
         [SerializeField] private string _recordSavePath;
         [SerializeField] private string _locationName;
+        [SerializeField] private float _startMinSpeed;
+        [SerializeField] private float _startMaxSpeed;
+        [SerializeField] private float _minSpeed;
+        [SerializeField] private float _maxSpeed;
         [SerializeField] private bool _isBossLocation;
 
         public List<Currency.Currency> currencies => _currencies;
@@ -19,6 +23,10 @@ namespace Location
         public Sprite ground => _ground;
         public string recordSavePath => _recordSavePath;
         public string locationName => _locationName;
+        public float startMinSpeed => _startMinSpeed;
+        public float startMaxSpeed => _startMaxSpeed;
+        public float minSpeed => _minSpeed;
+        public float maxSpeed => _maxSpeed;
         public bool isBossLocation => _isBossLocation;
     }   
 }

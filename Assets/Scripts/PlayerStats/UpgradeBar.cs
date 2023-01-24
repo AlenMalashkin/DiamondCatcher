@@ -54,7 +54,7 @@ namespace PlayerUpgradeMenu
 
         private void UpgradeItem()
         {
-            if (PlayerPrefs.GetInt(_resourceForUpgrade.playerPrefsName) > _costPerLevel[PlayerPrefs.GetInt(_statData.getUpgradeLevelByPlayerPrefsName, 0)])
+            if (PlayerPrefs.GetInt(_resourceForUpgrade.playerPrefsName) >= _costPerLevel[PlayerPrefs.GetInt(_statData.getUpgradeLevelByPlayerPrefsName, 0)])
             {
                 var currLevel = PlayerPrefs.GetInt(_statData.getUpgradeLevelByPlayerPrefsName, 0);
 

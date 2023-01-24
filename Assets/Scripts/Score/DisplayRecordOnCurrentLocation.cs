@@ -10,6 +10,6 @@ public class DisplayRecordOnCurrentLocation : MonoBehaviour
      
     private void Awake()
     {
-        _recordScore.text = Mathf.Round(PlayerPrefs.GetFloat(PlayerPrefs.GetString("CurrentLocation") + "Record")).ToString();
+        _recordScore.text = "Рекорд: " + Mathf.Round(PlayerPrefs.GetFloat(PlayerPrefs.GetString("CurrentLocation") + "Record")).ToString();
     }
 }

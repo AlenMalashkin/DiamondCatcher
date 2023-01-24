@@ -43,10 +43,10 @@ public class Player : MonoBehaviour
         if (currnetPlayerBehaviour != null)
             currnetPlayerBehaviour.Update();
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             MoveLeft();
         
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             MoveRight();
     }
     

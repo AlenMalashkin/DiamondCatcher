@@ -23,11 +23,13 @@ namespace Factories
             return item;
         }
 
-        public void Init(List<Currency.Currency> currencies, float minSpeed, float maxSpeed)
+        public void Init(List<Currency.Currency> currencies, float startMinSpeed, float startMaxSpeed, float minSpeed, float maxSpeed)
         {
             _currencies = currencies;
-            _currMaxSpeed = maxSpeed;
-            _currMinSpeed = minSpeed;
+            _currMaxSpeed = startMaxSpeed;
+            _currMinSpeed = startMinSpeed;
+            _maxSpeed = maxSpeed;
+            _minSpeed = minSpeed;
         }
 
         public void IncreaseItemSpeed()

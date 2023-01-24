@@ -18,5 +18,9 @@ MonoBehaviour:
   _background: {fileID: 21300000, guid: 1b448fa9169bacc4cab95d1b173c4b64, type: 3}
   _ground: {fileID: 21300000, guid: d6479185f94d43c4f84ac02399ccd043, type: 3}
   _recordSavePath: StrongholdLocationRecord
-  _locationName: Stronghold Location
+  _locationName: "\u041F\u043E\u0440\u0442\u0430\u043B \u0432 \u043A\u0440\u0430\u0439"
+  _startMinSpeed: 4
+  _startMaxSpeed: 5
+  _minSpeed: 8
+  _maxSpeed: 9
   _isBossLocation: 0

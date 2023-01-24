@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Fader;
 using FallingItems;
+using Scenes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,7 +36,7 @@ namespace Boss
             _health -= item.GetCurrentItemDamage;
             
             if (_health <= 0) 
-                FaderInvoker.instance.LoadScene("Menu");
+                SceneLoader.instance.LoadScene("WinScreen");
             
             _healthbar.value = (float) _health / 1000;
             _healthbarText.text = _health.ToString();

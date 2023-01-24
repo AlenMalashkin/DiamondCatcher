@@ -18,5 +18,9 @@ MonoBehaviour:
   _background: {fileID: 21300000, guid: 880521ce4eaad5f41888efc5aa4a6dfe, type: 3}
   _ground: {fileID: 21300000, guid: 8d705131ff66e3248802189df8b4587a, type: 3}
   _recordSavePath: NetherLocationRecord
-  _locationName: Nether Location
+  _locationName: "\u041D\u0438\u0436\u043D\u0438\u0439 \u043C\u0438\u0440"
+  _startMinSpeed: 3.5
+  _startMaxSpeed: 4
+  _minSpeed: 7
+  _maxSpeed: 8
   _isBossLocation: 0

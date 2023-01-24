@@ -1,11 +1,9 @@
-using System.Collections;
 using System;
 using System.Collections.Generic;
-using Fader;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using PlayerUpgradeMenu;
+using Scenes;
 
 namespace Lifebar
 {
@@ -68,12 +66,6 @@ namespace Lifebar
         {
             _health -= item.GetCurrentItemDamage;
             OnDecreasePlayerHealthEvent.Invoke(_health);
-
-            if (_health <= 0)
-            {
-                FaderInvoker.instance.LoadScene("LoseScreen");
-                PlayerPrefs.SetFloat(PlayerPrefs.GetString("CurrentLocation") + "Record", _score.score);
-            }
         }
 
         private void OnIncreaseHealth(int health)
@@ -90,9 +82,22 @@ namespace Lifebar
 
         private void OnDecreaceHealth(int health)
         {
+            if (_health <= 0)
+            {
+                _health = 0;
+                SceneLoader.instance.LoadScene("LoseScreen");
+                if (PlayerPrefs.GetFloat(PlayerPrefs.GetString("CurrentLocation")+ "Record", 0) < _score.score)
+                    PlayerPrefs.SetFloat(PlayerPrefs.GetString("CurrentLocation") + "Record", _score.score);
+
+                return;
+            }
+
+            SoundInvoker.instance.PlayHurtClip();
+
             for (int i = _maxHealth - 1; i >= health; i--)
             {
-                healthPoints[i].sprite = emptyHealthSprite;
+                if (healthPoints.Count > 0)
+                    healthPoints[i].sprite = emptyHealthSprite;
             }
         }
 

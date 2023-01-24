@@ -15,7 +15,7 @@ namespace PlayerProfile
         {
             _locationImage.sprite = locationParams.background;
             _locationName.text = locationParams.locationName;
-            _recordText.text = PlayerPrefs.GetInt(locationParams.recordSavePath, 0).ToString();
+            _recordText.text = "Рекорд: " + Mathf.Round(PlayerPrefs.GetFloat(locationParams.recordSavePath, 0)).ToString();
         }
     }
 }

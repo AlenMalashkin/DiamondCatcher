@@ -23,12 +23,13 @@ public class Ground : MonoBehaviour
     {
         if (col.collider.TryGetComponent(out FallingItems.DefaultItem item))
         {
-            OnItemTouchGroundEvent.Invoke(item);
+            OnItemTouchGroundEvent?.Invoke(item);
         }
     }
 
     private void DeactivateItem(FallingItems.Item item)
     {
+        SoundInvoker.instance.PlayItemHitGroundClip();
         item.gameObject.SetActive(false);
     }
 

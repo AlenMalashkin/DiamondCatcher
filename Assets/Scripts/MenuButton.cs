@@ -1,8 +1,4 @@
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Fader;
+using Scenes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,13 +7,14 @@ public class MenuButton : MonoBehaviour
     [SerializeField] private string _sceneName;
     [SerializeField] private Button _button;
 
-    private void Awake()
+    private void OnEnable()
     {
         _button.onClick.AddListener(LoadScene);
+        //_button.onClick.AddListener(SoundInvoker.instance.PlayOnButtonClickClip);
     }
 
     private void LoadScene()
     {
-        FaderInvoker.instance.LoadScene(_sceneName);
+        SceneLoader.instance.LoadScene(_sceneName);
     }
 }

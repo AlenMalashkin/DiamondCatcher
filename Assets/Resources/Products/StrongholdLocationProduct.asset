@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 21300000, guid: 1b448fa9169bacc4cab95d1b173c4b64, type: 3}
   _currency: {fileID: 11400000, guid: 5db775939348775448351449196abbca, type: 2}
-  _productName: Stronghold Location
+  _productName: "\u041F\u043E\u0440\u0442\u0430\u043B \u0432 \u043A\u0440\u0430\u0439"
   _cost: 1000
   _playerPrefsSaveName: StrongholdLocation

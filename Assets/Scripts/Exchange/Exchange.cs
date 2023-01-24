@@ -50,7 +50,7 @@ namespace Exchange
 
         private void ExcahngeResources()
         {
-            if (PlayerPrefs.GetInt(_changeResourse.playerPrefsName) > _cost)
+            if (PlayerPrefs.GetInt(_changeResourse.playerPrefsName) >= _cost)
             {
                 _bank.SpendResource(_changeResourse.playerPrefsName, _cost);
                 _bank.AddResource(_resultResource.playerPrefsName, _result);

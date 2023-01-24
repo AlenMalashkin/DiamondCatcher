@@ -4,9 +4,16 @@
     <e p="C:\Users\gor28\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\gor28\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_DiamondCatcher.461821425.00" t="ExcludeRecursive" />
     <e p="C:\Users\gor28\DiamondCatcher" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="RemoveMobileSupportWarningWebBuild.cs" t="Include" />
+        </e>
         <e p="Resources" t="Include">
+          <e p="Achievements" t="Include">
+            <e p="Achievement.cs" t="Include" />
+          </e>
           <e p="Boosters" t="Include">
             <e p="BoostData.cs" t="Include" />
           </e>
@@ -32,6 +39,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Achievements" t="Include">
+            <e p="AchievementCard.cs" t="Include" />
+            <e p="ViewAchievements.cs" t="Include" />
+          </e>
           <e p="Bank" t="Include">
             <e p="Bank.cs" t="Include" />
           </e>
@@ -54,10 +65,6 @@
               <e p="ItemFactoryInvoker.cs" t="Include" />
             </e>
           </e>
-          <e p="Fader" t="Include">
-            <e p="Fader.cs" t="Include" />
-            <e p="FaderInvoker.cs" t="Include" />
-          </e>
           <e p="FallingItems" t="Include">
             <e p="BoostItem.cs" t="Include" />
             <e p="DefaultItem.cs" t="Include" />
@@ -74,6 +81,7 @@
             <e p="InitLocation.cs" t="Include" />
           </e>
           <e p="MenuButton.cs" t="Include" />
+          <e p="Pause.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="IPlayerBehaviour.cs" t="Include" />
             <e p="Player.cs" t="Include" />
@@ -96,6 +104,17 @@
             <e p="UpgradeBar.cs" t="Include" />
             <e p="UpgradeMenu.cs" t="Include" />
           </e>
+          <e p="RewardedAd.cs" t="Include" />
+          <e p="SceneLoader" t="Include">
+            <e p="SceneLoader.cs" t="Include" />
+          </e>
+          <e p="Score" t="Include">
+            <e p="DisplayRecordOnCurrentLocation.cs" t="Include" />
+            <e p="Score.cs" t="Include" />
+          </e>
+          <e p="SFX" t="Include">
+            <e p="SoundInvoker.cs" t="Include" />
+          </e>
           <e p="Shop" t="Include">
             <e p="CurrencyUI.cs" t="Include" />
             <e p="ProductCard.cs" t="Include" />
@@ -108,6 +127,57 @@
           </e>
           <e p="TouchControl" t="Include">
             <e p="TouchControll.cs" t="Include" />
+          </e>
+        </e>
+        <e p="YandexGame" t="Include">
+          <e p="Addons" t="Include">
+            <e p="Auto Localization" t="Include">
+              <e p="JsonDotNet" t="Include">
+                <e p="link.xml" t="Include" />
+              </e>
+            </e>
+            <e p="UnityToolbag-main" t="Include">
+              <e p="ConditionallyVisiblePropertyDrawer" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="ConditionallyVisiblePropertyDrawer.cs" t="Include" />
+                </e>
+                <e p="Runtime" t="Include">
+                  <e p="ConditionallyVisibleAttribute.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Example" t="Include">
+            <e p="DebugViewing" t="Include">
+              <e p="DebugViewing.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CheaterMessage.cs" t="Include" />
+              <e p="DestroyObj.cs" t="Include" />
+              <e p="GetPlayerData.cs" t="Include" />
+              <e p="LanguageExample.cs" t="Include" />
+              <e p="LogInStartMassage.cs" t="Include" />
+              <e p="NewResultLeaderboard.cs" t="Include" />
+              <e p="OpenAuthorizationDialog.cs" t="Include" />
+              <e p="RewardedAd.cs" t="Include" />
+              <e p="SaverTest.cs" t="Include" />
+              <e p="SwitchSceneTest.cs" t="Include" />
+            </e>
+          </e>
+          <e p="ScriptsYG" t="Include">
+            <e p="Editor" t="Include">
+              <e p="CreateYandexGameEditor.cs" t="Include" />
+              <e p="FontMasseInstallEditorWindow.cs" t="Include" />
+              <e p="LanguageYGEditor.cs" t="Include" />
+              <e p="LanguageYGEditorWindow.cs" t="Include" />
+            </e>
+            <e p="GraphicSettingsYG.cs" t="Include" />
+            <e p="ImageLoadYG.cs" t="Include" />
+            <e p="InfoYG.cs" t="Include" />
+            <e p="LanguageYG.cs" t="Include" />
+            <e p="LeaderboardYG.cs" t="Include" />
+            <e p="ViewingAds.cs" t="Include" />
+            <e p="YandexGame.cs" t="Include" />
           </e>
         </e>
       </e>

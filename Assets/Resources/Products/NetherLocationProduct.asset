@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 21300000, guid: 880521ce4eaad5f41888efc5aa4a6dfe, type: 3}
   _currency: {fileID: 11400000, guid: 70c40f23b01ed914a9b5c647fdd19c3a, type: 2}
-  _productName: Nether Location
-  _cost: 30
+  _productName: "\u041D\u0438\u0436\u043D\u0438\u0439 \u043C\u0438\u0440"
+  _cost: 1000
   _playerPrefsSaveName: NetherLocation

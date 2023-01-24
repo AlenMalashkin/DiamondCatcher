@@ -39,6 +39,8 @@ public class PlayerBoosts : MonoBehaviour
     public Action SetBoost(string key)
     {
         _timer.Start(_boostDuration);
+        
+        SoundInvoker.instance.PlaySlurpClip();
 
         return _playerBoosts[key];
     }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcf48684c02cd441ace81fee2642a76, type: 3}
   m_Name: SizeBooster
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 2747690628134850419, guid: b24b48daf44afda4e8e126f6d92934b6, type: 3}
+  _sprite: {fileID: 21300000, guid: 56f3d82aa3575d441bf5828fbf22ea25, type: 3}
   _boostName: SizeBoost

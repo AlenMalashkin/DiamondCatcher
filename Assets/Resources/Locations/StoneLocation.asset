@@ -21,5 +21,9 @@ MonoBehaviour:
   _background: {fileID: 21300000, guid: 383e7c70d969b3647b3b0261d9e8bc17, type: 3}
   _ground: {fileID: 21300000, guid: d6479185f94d43c4f84ac02399ccd043, type: 3}
   _recordSavePath: StoneLocationRecord
-  _locationName: Stone Location
+  _locationName: "\u0428\u0430\u0445\u0442\u0430"
+  _startMinSpeed: 2
+  _startMaxSpeed: 2.5
+  _minSpeed: 5
+  _maxSpeed: 6
   _isBossLocation: 0
